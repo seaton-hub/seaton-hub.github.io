@@ -1,0 +1,12 @@
+# Netlify configuration for the Seaton Logistics site.
+[build]
+  # Serve the site's static files from the repo root.
+  publish = "."
+  # Where the serverless functions live.
+  functions = "netlify/functions"
+
+# Keep the frontend calling /send unchanged: rewrite it to the function.
+[[redirects]]
+  from = "/send"
+  to = "/.netlify/functions/send"
+  status = 200
